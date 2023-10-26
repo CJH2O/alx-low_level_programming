@@ -1,17 +1,17 @@
 #include "main.h"
-/**
- * _puts_recursion - function like puts();
- * @s: input
- * Return: Always 0 (Success)
- */
-void _puts_recursion(char *s)
-{
-	if (*s)
-	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
 
-	else
-		_putchar('\n');
+/**
+ * _pow_recursion - returns the value of x raised to the power of y
+ * @x: value to raise
+ * @y: power
+ *
+ * Return: result of the power
+ */
+int _pow_recursion(int x, int y)
+{
+	if (y < 0)
+		return (-1);
+	if (y == 0)
+		return (1);
+	return (x * _pow_recursion(x, y - 1));
 }
